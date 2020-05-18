@@ -27,7 +27,7 @@ class ViewController: UIViewController {
             superView.addSubview(self.innerView)
             self.innerView.backgroundColor = .lightGray
                 
-            self.innerView.top() ~~> superView.top(margin: true) + 20
+            self.innerView.top() ~~> superView.top(margin: true) + [.s, .m]
             self.innerView.height() --= 87
             self.innerView.leading() -- superView.leading()
             self.innerView.bottom() -- superView.bottom() - 30
