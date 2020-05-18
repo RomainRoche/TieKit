@@ -12,7 +12,8 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "TieKit"
+            name: "TieKit",
+            path: "TieKit/Sources"
         )
     ]
 )
