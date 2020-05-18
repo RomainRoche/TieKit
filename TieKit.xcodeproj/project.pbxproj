@@ -17,6 +17,8 @@
 		7A7101702471918100C3D640 /* NSLayoutAnchor_Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A71016D2471918100C3D640 /* NSLayoutAnchor_Operator.swift */; };
 		7A7101712471918100C3D640 /* NSLayoutConstraint_Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A71016E2471918100C3D640 /* NSLayoutConstraint_Operators.swift */; };
 		7A7101722471918100C3D640 /* UIView_Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A71016F2471918100C3D640 /* UIView_Anchor.swift */; };
+		7A7101752472759900C3D640 /* TieConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7101742472759900C3D640 /* TieConstraint.swift */; };
+		7A710177247275D200C3D640 /* TieSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A710176247275D200C3D640 /* TieSize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		7A71016D2471918100C3D640 /* NSLayoutAnchor_Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutAnchor_Operator.swift; sourceTree = "<group>"; };
 		7A71016E2471918100C3D640 /* NSLayoutConstraint_Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint_Operators.swift; sourceTree = "<group>"; };
 		7A71016F2471918100C3D640 /* UIView_Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Anchor.swift; sourceTree = "<group>"; };
+		7A7101742472759900C3D640 /* TieConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TieConstraint.swift; sourceTree = "<group>"; };
+		7A710176247275D200C3D640 /* TieSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TieSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				7A71016F2471918100C3D640 /* UIView_Anchor.swift */,
 				7A71016D2471918100C3D640 /* NSLayoutAnchor_Operator.swift */,
 				7A71016E2471918100C3D640 /* NSLayoutConstraint_Operators.swift */,
+				7A7101742472759900C3D640 /* TieConstraint.swift */,
+				7A710176247275D200C3D640 /* TieSize.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -230,8 +236,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A7101722471918100C3D640 /* UIView_Anchor.swift in Sources */,
+				7A7101752472759900C3D640 /* TieConstraint.swift in Sources */,
 				7A7101702471918100C3D640 /* NSLayoutAnchor_Operator.swift in Sources */,
 				7A7101712471918100C3D640 /* NSLayoutConstraint_Operators.swift in Sources */,
+				7A710177247275D200C3D640 /* TieSize.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
