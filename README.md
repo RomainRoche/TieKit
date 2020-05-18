@@ -56,3 +56,34 @@ let constraint = subview.height() ~>= 80
 subview.height() <~= 80
 ```
 
+## Using `TieSize`
+
+The `TieSize` enumeration set predefined sizes you can use in your code or in your storyboards.
+
+The base value `TieSize.spacing` defines the base spacing. You can change it (as soon as possible in your app lifecycle, like your AppDelegate).
+
+```swift
+TieSize.spacing = 6
+```
+
+### Usage in code
+
+```swift
+let smallSpacing: CGFloat = TieSize.s.spacing
+```
+
+You can use `TieSize` to add to a constraint directly.
+
+```swift
+subview.leading() -- superview.leading() + .s
+```
+
+### Use in storyboard
+
+When setting a constraint in storyboard you can use `TieSize` to. 
+
+* Set the class of the constraint to `TieConstraint`.
+* In the *Attributes inspector* tab, set the `Spacing name` value as a text with the predefined values: `xs`, `s`, `m`, `l`, `xl`, `xxl`. You can even sum the values: `m+s`.
+
+
+
