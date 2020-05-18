@@ -11,20 +11,29 @@ import TieKit
 
 class ViewController: UIViewController {
 
-    let innerView = UIView(frame: .zero)
+    // MARK: - private
+    
+    private let innerView = UIView(frame: .zero)
+    
+    @IBOutlet private weak var greenView: UIView?
+    
+    // MARK: - public
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.innerView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(self.innerView)
-        self.innerView.backgroundColor = .green
+        if let superView = self.greenView {
+            self.innerView.translatesAutoresizingMaskIntoConstraints = false
+            superView.addSubview(self.innerView)
+            self.innerView.backgroundColor = .lightGray
+                
+            self.innerView.top() ~~> superView.top(margin: true) + 20
+            self.innerView.height() --= 87
+            self.innerView.leading() -- superView.leading()
+            self.innerView.bottom() -- superView.bottom() - 30
+            self.innerView.trailing() -- superView.trailing() - 12
+        }
         
-        self.innerView.top() ~~> self.view.top(margin: true) + 20
-        self.innerView.height() --= 87
-        self.innerView.leading() -- self.view.leading()
-        self.innerView.bottom() -- self.view.bottom() - 30
-        self.innerView.trailing() -- self.view.trailing() - 12
     }
 
 
