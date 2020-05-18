@@ -2,6 +2,8 @@
 
 **TieKit** is a Swift DSL framework designed to ease the use of `NSLayoutAnchor` and `NSLayoutconstraint` in *UIKit*. 
 
+![tiekit icon](https://github.com/RomainRoche/TieKit/blob/master/tiekit.png?raw=true)
+
 ## Anchor shortcuts
 
 ```swift
