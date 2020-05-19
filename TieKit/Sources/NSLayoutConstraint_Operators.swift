@@ -13,7 +13,7 @@ public extension NSLayoutConstraint {
     /// Increase the constant of a layout constraint.
     /// - Parameter lhs: The constraint.
     /// - Parameter rhs: The value to add to the constant.
-    static func + (lhs: NSLayoutConstraint, rhs: Double) {
+    static func + <F: BinaryFloatingPoint>(lhs: NSLayoutConstraint, rhs: F) {
         lhs.constant = lhs.constant + CGFloat(rhs)
     }
     
@@ -34,7 +34,7 @@ public extension NSLayoutConstraint {
     /// Dcrease the constant of a layout constraint.
     /// - Parameter lhs: The constraint.
     /// - Parameter rhs: The value to substract to the constant.
-    static func - (lhs: NSLayoutConstraint, rhs: Double) {
+    static func - <F: BinaryFloatingPoint>(lhs: NSLayoutConstraint, rhs: F) {
         lhs.constant = lhs.constant - CGFloat(rhs)
     }
     
