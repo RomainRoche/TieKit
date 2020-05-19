@@ -27,11 +27,14 @@ class ViewController: UIViewController {
             superView.addSubview(self.innerView)
             self.innerView.backgroundColor = .lightGray
                 
+            let i = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+            let d: CGFloat = 20
+            
             self.innerView.top() ~~> superView.top(margin: true) + [.s, .m]
             self.innerView.height() --= 87
             self.innerView.leading() -- superView.leading()
-            self.innerView.bottom() -- superView.bottom() - 30
-            self.innerView.trailing() -- superView.trailing() - 12
+            self.innerView.bottom() -- superView.bottom() - i.top
+            _ = self.innerView.trailing() -- superView.trailing() - d
         }
         
     }
