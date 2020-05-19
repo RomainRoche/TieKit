@@ -8,9 +8,9 @@
 
 import UIKit
 
-infix operator ~~>: MultiplicationPrecedence
-infix operator <~~: MultiplicationPrecedence
-infix operator --: MultiplicationPrecedence
+infix operator ~~>  : MultiplicationPrecedence
+infix operator <~~  : MultiplicationPrecedence
+infix operator --   : MultiplicationPrecedence
 
 public extension NSLayoutAnchor where AnchorType == NSLayoutXAxisAnchor {
     
@@ -105,33 +105,33 @@ public extension NSLayoutAnchor where AnchorType == NSLayoutDimension {
     
 }
 
-infix operator --=: MultiplicationPrecedence
-infix operator ~>=: MultiplicationPrecedence
-infix operator <~=: MultiplicationPrecedence
+infix operator --=  : MultiplicationPrecedence
+infix operator ~>=  : MultiplicationPrecedence
+infix operator <~=  : MultiplicationPrecedence
 
 public extension NSLayoutDimension {
 
-    @discardableResult static func --= (
+    @discardableResult static func --= <F: BinaryFloatingPoint>(
         lhs: NSLayoutDimension,
-        rhs: Double
+        rhs: F
     ) -> NSLayoutConstraint {
         let c = lhs.constraint(equalToConstant: CGFloat(rhs))
         c.isActive = true
         return c
     }
 
-    @discardableResult static func ~>= (
+    @discardableResult static func ~>= <F: BinaryFloatingPoint>(
         lhs: NSLayoutDimension,
-        rhs: Double
+        rhs: F
     ) -> NSLayoutConstraint {
         let c = lhs.constraint(greaterThanOrEqualToConstant: CGFloat(rhs))
         c.isActive = true
         return c
     }
 
-    @discardableResult static func <~= (
+    @discardableResult static func <~= <F: BinaryFloatingPoint>(
         lhs: NSLayoutDimension,
-        rhs: Double
+        rhs: F
     ) -> NSLayoutConstraint {
         let c = lhs.constraint(lessThanOrEqualToConstant: CGFloat(rhs))
         c.isActive = true
