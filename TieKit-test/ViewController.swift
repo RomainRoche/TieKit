@@ -34,7 +34,7 @@ class ViewController: UIViewController {
             self.innerView.height() --= 87
             self.innerView.leading() -- superView.leading()
             self.innerView.bottom() -- superView.bottom() - i.top
-            self.innerView.trailing() -- superView.trailing() - d
+            _ = self.innerView.trailing() -- superView.trailing() - d
         }
         
     }
