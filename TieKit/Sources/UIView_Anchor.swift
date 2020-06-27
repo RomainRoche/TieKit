@@ -10,52 +10,81 @@ import UIKit
 
 public extension UIView {
     
-    func top(margin: Bool = false) -> NSLayoutYAxisAnchor {
+    func topClip(margin: Bool = false) -> TieClip<NSLayoutYAxisAnchor> {
         return margin
-            ? self.layoutMarginsGuide.topAnchor
-            : self.topAnchor
+            ? .top(self.layoutMarginsGuide.topAnchor)
+            : .top(self.topAnchor)
     }
     
-    func leading(margin: Bool = false) -> NSLayoutXAxisAnchor {
+    func leadingClip(margin: Bool = false) -> TieClip<NSLayoutXAxisAnchor> {
         return margin
-            ? self.layoutMarginsGuide.leadingAnchor
-            : self.leadingAnchor
+            ? .leading(self.layoutMarginsGuide.leadingAnchor)
+            : .leading(self.leadingAnchor)
     }
     
-    func bottom(margin: Bool = false) -> NSLayoutYAxisAnchor {
+    func bottomClip(margin: Bool = false) -> TieClip<NSLayoutYAxisAnchor> {
         return margin
-            ? self.layoutMarginsGuide.bottomAnchor
-            : self.bottomAnchor
+            ? .bottom(self.layoutMarginsGuide.bottomAnchor)
+            : .bottom(self.bottomAnchor)
     }
     
-    func trailing(margin: Bool = false) -> NSLayoutXAxisAnchor {
+    func trailingClip(margin: Bool = false) -> TieClip<NSLayoutXAxisAnchor> {
         return margin
-            ? self.layoutMarginsGuide.trailingAnchor
-            : self.trailingAnchor
+            ? .trailing(self.layoutMarginsGuide.trailingAnchor)
+            : .trailing(self.trailingAnchor)
     }
     
-    func centerX(margin: Bool = false) -> NSLayoutXAxisAnchor {
+    func centerXClip(margin: Bool = false) -> TieClip<NSLayoutXAxisAnchor> {
         return margin
-            ? self.layoutMarginsGuide.centerXAnchor
-            : self.centerXAnchor
+            ? .centerX(self.layoutMarginsGuide.centerXAnchor)
+            : .centerX(self.centerXAnchor)
     }
     
-    func centerY(margin: Bool = false) -> NSLayoutYAxisAnchor {
+    func centerYClip(margin: Bool = false) -> TieClip<NSLayoutYAxisAnchor> {
         return margin
-            ? self.layoutMarginsGuide.centerYAnchor
-            : self.centerYAnchor
+            ? .centerY(self.layoutMarginsGuide.centerYAnchor)
+            : .centerY(self.centerYAnchor)
     }
     
-    func width(margin: Bool = false) -> NSLayoutDimension {
+    func widthClip(margin: Bool = false) -> TieClip<NSLayoutDimension> {
         return margin
-            ? self.layoutMarginsGuide.widthAnchor
-            : self.widthAnchor
+            ? .width(self.layoutMarginsGuide.widthAnchor)
+            : .width(self.widthAnchor)
     }
     
-    func height(margin: Bool = false) -> NSLayoutDimension {
+    func heightClip(margin: Bool = false) -> TieClip<NSLayoutDimension> {
         return margin
-            ? self.layoutMarginsGuide.heightAnchor
-            : self.heightAnchor
+            ? .height(self.layoutMarginsGuide.heightAnchor)
+            : .height(self.heightAnchor)
+    }
+    
+    func xAxisClip(
+        margin: Bool = false
+    ) -> [TieClip<NSLayoutXAxisAnchor>] {
+        return margin
+            ? [.leading(self.layoutMarginsGuide.leadingAnchor),
+               .trailing(self.layoutMarginsGuide.trailingAnchor)]
+            : [.leading(self.leadingAnchor),
+               .trailing(self.trailingAnchor)]
+    }
+    
+    func yAxisClip(
+        margin: Bool = false
+    ) -> [TieClip<NSLayoutYAxisAnchor>] {
+        return margin
+            ? [.top(self.layoutMarginsGuide.topAnchor),
+               .bottom(self.layoutMarginsGuide.bottomAnchor)]
+            : [.top(self.topAnchor),
+               .bottom(self.bottomAnchor)]
+    }
+    
+    func dimensionClip(
+        margin: Bool = false
+    ) -> [NSLayoutDimension] {
+        return margin ? [
+            self.layoutMarginsGuide.widthAnchor,
+            self.layoutMarginsGuide.heightAnchor
+        ] : [self.widthAnchor, self.heightAnchor]
     }
     
 }
