@@ -14,26 +14,27 @@ public final class TieConstraint: NSLayoutConstraint {
     // MARK: - private
     
     private func resetSpacing() {
-        self.constant = self.spacing.reduce(0, { return $0 + $1.spacing})
-            * self.multiplier
+        self.constant = self.spacing.spacing * self.multiplier
     }
     
     @IBInspectable
     private var spacingName: String {
         get {
-            return self.spacing.reduce("", { return $0 + $1.rawValue })
+            return self.spacing.stringValue
         }
         set {
             let all = newValue.split(separator: "+").map { String($0) }
-            self.spacing = all.map {
-                return TieSize(rawValue: $0.lowercased()) ?? .zero
+            if all.count == 1 {
+                self.spacing = TieSize(from: all[0])
+                return
             }
+            self.spacing = all.reduce(.zero, {$0 + TieSize(from: $1)})
         }
     }
     
     // MARK: - public
     
-    public var spacing: [TieSize] = [.m] {
+    public var spacing: TieSize = .m {
         didSet { self.resetSpacing() }
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A2C2F1424757FA1001A0AE3 /* TieClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2C2F1324757FA1001A0AE3 /* TieClip.swift */; };
 		7A71014C247190D000C3D640 /* TieKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A71014A247190D000C3D640 /* TieKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A71015A2471911200C3D640 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7101592471911200C3D640 /* AppDelegate.swift */; };
 		7A71015C2471911200C3D640 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A71015B2471911200C3D640 /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 		7A7101722471918100C3D640 /* UIView_Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A71016F2471918100C3D640 /* UIView_Anchor.swift */; };
 		7A7101752472759900C3D640 /* TieConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7101742472759900C3D640 /* TieConstraint.swift */; };
 		7A710177247275D200C3D640 /* TieSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A710176247275D200C3D640 /* TieSize.swift */; };
+		7A71018C24755D3500C3D640 /* TieInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A71018B24755D3500C3D640 /* TieInsets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A2C2F1324757FA1001A0AE3 /* TieClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TieClip.swift; sourceTree = "<group>"; };
 		7A710147247190D000C3D640 /* TieKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TieKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A71014A247190D000C3D640 /* TieKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TieKit.h; sourceTree = "<group>"; };
 		7A71014B247190D000C3D640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		7A7101742472759900C3D640 /* TieConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TieConstraint.swift; sourceTree = "<group>"; };
 		7A710176247275D200C3D640 /* TieSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TieSize.swift; sourceTree = "<group>"; };
 		7A7101782472DB8300C3D640 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		7A71018B24755D3500C3D640 /* TieInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TieInsets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				7A71016E2471918100C3D640 /* NSLayoutConstraint_Operators.swift */,
 				7A7101742472759900C3D640 /* TieConstraint.swift */,
 				7A710176247275D200C3D640 /* TieSize.swift */,
+				7A71018B24755D3500C3D640 /* TieInsets.swift */,
+				7A2C2F1324757FA1001A0AE3 /* TieClip.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -239,6 +245,8 @@
 			files = (
 				7A7101722471918100C3D640 /* UIView_Anchor.swift in Sources */,
 				7A7101752472759900C3D640 /* TieConstraint.swift in Sources */,
+				7A71018C24755D3500C3D640 /* TieInsets.swift in Sources */,
+				7A2C2F1424757FA1001A0AE3 /* TieClip.swift in Sources */,
 				7A7101702471918100C3D640 /* NSLayoutAnchor_Operator.swift in Sources */,
 				7A7101712471918100C3D640 /* NSLayoutConstraint_Operators.swift in Sources */,
 				7A710177247275D200C3D640 /* TieSize.swift in Sources */,
