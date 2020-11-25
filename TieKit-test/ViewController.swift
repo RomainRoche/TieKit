@@ -23,6 +23,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         if let superView = self.greenView {
+                        
+            superView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 100, leading: 0, bottom: 0, trailing: 0)
+            
             self.innerView.translatesAutoresizingMaskIntoConstraints = false
             superView.addSubview(self.innerView)
             self.innerView.backgroundColor = .lightGray
@@ -30,16 +33,18 @@ class ViewController: UIViewController {
             let i = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
             let d: CGFloat = 20
             
-            self.innerView.topClip() --> superView.topClip()
-            self.innerView.bottomClip() <~~ superView.bottomClip(margin: false) + .s + .m
-//            self.innerView.heightClip() --= 87
+            self.innerView.topClip() --> superView.topClip(guide: .none)
+            self.innerView.bottomClip() <~~ superView.bottomClip() + .s + .m
             self.innerView.leadingClip() --> superView.leadingClip()
             self.innerView.trailingClip() --> superView.trailingClip() - .xl
-//            self.innerView.leadingClip() -- superView.leadingClip()
-//            self.innerView.bottomClip() -- superView.bottomClip() - i.top
-//            _ = self.innerView.trailingClip() -- superView.trailingClip() - d
+            self.innerView.heightClip() --= 200
         }
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("\(self.innerView.frame)")
     }
 
 }

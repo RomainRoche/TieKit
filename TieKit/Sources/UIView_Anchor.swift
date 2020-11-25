@@ -10,81 +10,113 @@ import UIKit
 
 public extension UIView {
     
-    func topClip(margin: Bool = false) -> TieClip<NSLayoutYAxisAnchor> {
-        return margin
-            ? .top(self.layoutMarginsGuide.topAnchor)
-            : .top(self.topAnchor)
+    enum Guide {
+        case none
+        case margin
+        case safeArea
     }
     
-    func leadingClip(margin: Bool = false) -> TieClip<NSLayoutXAxisAnchor> {
-        return margin
-            ? .leading(self.layoutMarginsGuide.leadingAnchor)
-            : .leading(self.leadingAnchor)
+    func topClip(guide: Guide = .none) -> TieClip<NSLayoutYAxisAnchor> {
+        switch guide {
+        case .none: return .top(self.topAnchor)
+        case .margin: return .top(self.layoutMarginsGuide.topAnchor)
+        case .safeArea: return .top(self.safeAreaLayoutGuide.topAnchor)
+        }
     }
     
-    func bottomClip(margin: Bool = false) -> TieClip<NSLayoutYAxisAnchor> {
-        return margin
-            ? .bottom(self.layoutMarginsGuide.bottomAnchor)
-            : .bottom(self.bottomAnchor)
+    func leadingClip(guide: Guide = .none) -> TieClip<NSLayoutXAxisAnchor> {
+        switch guide {
+        case .none: return .top(self.leadingAnchor)
+        case .margin: return .top(self.layoutMarginsGuide.leadingAnchor)
+        case .safeArea: return .top(self.safeAreaLayoutGuide.leadingAnchor)
+        }
     }
     
-    func trailingClip(margin: Bool = false) -> TieClip<NSLayoutXAxisAnchor> {
-        return margin
-            ? .trailing(self.layoutMarginsGuide.trailingAnchor)
-            : .trailing(self.trailingAnchor)
+    func bottomClip(guide: Guide = .none) -> TieClip<NSLayoutYAxisAnchor> {
+        switch guide {
+        case .none: return .top(self.bottomAnchor)
+        case .margin: return .top(self.layoutMarginsGuide.bottomAnchor)
+        case .safeArea: return .top(self.safeAreaLayoutGuide.bottomAnchor)
+        }
     }
     
-    func centerXClip(margin: Bool = false) -> TieClip<NSLayoutXAxisAnchor> {
-        return margin
-            ? .centerX(self.layoutMarginsGuide.centerXAnchor)
-            : .centerX(self.centerXAnchor)
+    func trailingClip(guide: Guide = .none) -> TieClip<NSLayoutXAxisAnchor> {
+        switch guide {
+        case .none: return .top(self.trailingAnchor)
+        case .margin: return .top(self.layoutMarginsGuide.trailingAnchor)
+        case .safeArea: return .top(self.safeAreaLayoutGuide.trailingAnchor)
+        }
     }
     
-    func centerYClip(margin: Bool = false) -> TieClip<NSLayoutYAxisAnchor> {
-        return margin
-            ? .centerY(self.layoutMarginsGuide.centerYAnchor)
-            : .centerY(self.centerYAnchor)
+    func centerXClip(guide: Guide = .none) -> TieClip<NSLayoutXAxisAnchor> {
+        switch guide {
+        case .none: return .top(self.centerXAnchor)
+        case .margin: return .top(self.layoutMarginsGuide.centerXAnchor)
+        case .safeArea: return .top(self.safeAreaLayoutGuide.centerXAnchor)
+        }
     }
     
-    func widthClip(margin: Bool = false) -> TieClip<NSLayoutDimension> {
-        return margin
-            ? .width(self.layoutMarginsGuide.widthAnchor)
-            : .width(self.widthAnchor)
+    func centerYClip(guide: Guide = .none) -> TieClip<NSLayoutYAxisAnchor> {
+        switch guide {
+        case .none: return .top(self.centerYAnchor)
+        case .margin: return .top(self.layoutMarginsGuide.centerYAnchor)
+        case .safeArea: return .top(self.safeAreaLayoutGuide.centerYAnchor)
+        }
     }
     
-    func heightClip(margin: Bool = false) -> TieClip<NSLayoutDimension> {
-        return margin
-            ? .height(self.layoutMarginsGuide.heightAnchor)
-            : .height(self.heightAnchor)
+    func widthClip(guide: Guide = .none) -> TieClip<NSLayoutDimension> {
+        switch guide {
+        case .none: return .top(self.widthAnchor)
+        case .margin: return .top(self.layoutMarginsGuide.widthAnchor)
+        case .safeArea: return .top(self.safeAreaLayoutGuide.widthAnchor)
+        }
+    }
+    
+    func heightClip(guide: Guide = .none) -> TieClip<NSLayoutDimension> {
+        switch guide {
+        case .none: return .top(self.heightAnchor)
+        case .margin: return .top(self.layoutMarginsGuide.heightAnchor)
+        case .safeArea: return .top(self.safeAreaLayoutGuide.heightAnchor)
+        }
     }
     
     func xAxisClip(
-        margin: Bool = false
+        guide: Guide = .none
     ) -> [TieClip<NSLayoutXAxisAnchor>] {
-        return margin
-            ? [.leading(self.layoutMarginsGuide.leadingAnchor),
-               .trailing(self.layoutMarginsGuide.trailingAnchor)]
-            : [.leading(self.leadingAnchor),
-               .trailing(self.trailingAnchor)]
+        switch guide {
+        case .none: return [.leading(self.leadingAnchor),
+                            .trailing(self.trailingAnchor)]
+        case .margin: return [.leading(self.layoutMarginsGuide.leadingAnchor),
+                              .trailing(self.layoutMarginsGuide.trailingAnchor)]
+        case .safeArea: return [.leading(self.safeAreaLayoutGuide.leadingAnchor),
+                                .trailing(self.safeAreaLayoutGuide.trailingAnchor)]
+        }
     }
     
     func yAxisClip(
-        margin: Bool = false
+        guide: Guide = .none
     ) -> [TieClip<NSLayoutYAxisAnchor>] {
-        return margin
-            ? [.top(self.layoutMarginsGuide.topAnchor),
-               .bottom(self.layoutMarginsGuide.bottomAnchor)]
-            : [.top(self.topAnchor),
-               .bottom(self.bottomAnchor)]
+        switch guide {
+        case .none: return [.leading(self.topAnchor),
+                            .trailing(self.bottomAnchor)]
+        case .margin: return [.leading(self.layoutMarginsGuide.topAnchor),
+                              .trailing(self.layoutMarginsGuide.bottomAnchor)]
+        case .safeArea: return [.leading(self.safeAreaLayoutGuide.topAnchor),
+                                .trailing(self.safeAreaLayoutGuide.bottomAnchor)]
+        }
     }
     
     func dimensionClip(
-        margin: Bool = false
-    ) -> [NSLayoutDimension] {
-        return margin ? [
-            self.layoutMarginsGuide.widthAnchor,
-            self.layoutMarginsGuide.heightAnchor
-        ] : [self.widthAnchor, self.heightAnchor]
+        guide: Guide = .none
+    ) -> [TieClip<NSLayoutDimension>] {
+        switch guide {
+        case .none: return [.leading(self.widthAnchor),
+                            .trailing(self.heightAnchor)]
+        case .margin: return [.leading(self.layoutMarginsGuide.widthAnchor),
+                              .trailing(self.layoutMarginsGuide.heightAnchor)]
+        case .safeArea: return [.leading(self.safeAreaLayoutGuide.widthAnchor),
+                                .trailing(self.safeAreaLayoutGuide.heightAnchor)]
+        }
     }
     
 }
