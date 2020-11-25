@@ -10,7 +10,7 @@ import UIKit
 
 infix operator ~~>  : MultiplicationPrecedence
 infix operator <~~  : MultiplicationPrecedence
-infix operator -->   : MultiplicationPrecedence
+infix operator ---   : MultiplicationPrecedence
 
 public extension NSLayoutAnchor where AnchorType == NSLayoutXAxisAnchor {
     
@@ -32,7 +32,7 @@ public extension NSLayoutAnchor where AnchorType == NSLayoutXAxisAnchor {
         return c
     }
 
-    @discardableResult static func --> (
+    @discardableResult static func --- (
         lhs: NSLayoutAnchor<AnchorType>,
         rhs: NSLayoutAnchor<AnchorType>
     ) -> NSLayoutConstraint {
@@ -63,7 +63,7 @@ public extension NSLayoutAnchor where AnchorType == NSLayoutYAxisAnchor {
         return c
     }
 
-    @discardableResult static func --> (
+    @discardableResult static func --- (
         lhs: NSLayoutAnchor<AnchorType>,
         rhs: NSLayoutAnchor<AnchorType>
     ) -> NSLayoutConstraint {
@@ -98,7 +98,7 @@ public extension NSLayoutAnchor where AnchorType == NSLayoutDimension {
         return c
     }
 
-    @discardableResult static func --> (
+    @discardableResult static func --- (
         lhs: NSLayoutAnchor<AnchorType>,
         rhs: NSLayoutAnchor<AnchorType>
     ) -> NSLayoutConstraint {
