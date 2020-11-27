@@ -36,7 +36,8 @@ class ViewController: UIViewController {
             self.innerView.topClip() --- superView.topClip(guide: .safeArea)
             self.innerView.bottomClip() --- superView.bottomClip(guide: .margin) - .l
             self.innerView.leadingClip() --- superView.leadingClip()
-            self.innerView.trailingClip() --- superView.trailingClip() - .xl
+            let tc = self.innerView.trailingClip() --- superView.trailingClip() - .xl
+            print(tc)
         }
         
     }

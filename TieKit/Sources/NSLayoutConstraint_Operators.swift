@@ -8,15 +8,15 @@
 
 import UIKit
 
-public extension NSLayoutConstraint {
+public extension TieConstraint {
     
     /// Increase the constant of a layout constraint.
     /// - Parameter lhs: The constraint.
     /// - Parameter rhs: The value to add to the constant.
     /// - Returns: The constraint.
     @discardableResult static func + <F: BinaryFloatingPoint>(
-        lhs: NSLayoutConstraint, rhs: F
-    ) -> NSLayoutConstraint{
+        lhs: TieConstraint, rhs: F
+    ) -> TieConstraint{
         lhs.constant = lhs.constant + CGFloat(rhs)
         return lhs
     }
@@ -26,8 +26,8 @@ public extension NSLayoutConstraint {
     /// - Parameter rhs: The `TieSize` spacing to add to the constant.
     /// - Returns: The constraint.
     @discardableResult static func + (
-        lhs: NSLayoutConstraint, rhs: TieSize
-    ) -> NSLayoutConstraint {
+        lhs: TieConstraint, rhs: TieSize
+    ) -> TieConstraint {
         lhs.constant = lhs.constant + rhs.spacing
         return lhs
     }
@@ -37,8 +37,8 @@ public extension NSLayoutConstraint {
     /// - Parameter rhs: A `TieSize` array to sum and add to the constant.
     /// - Returns: The constraint.
     @discardableResult static func + (
-        lhs: NSLayoutConstraint, rhs: [TieSize]
-    ) -> NSLayoutConstraint {
+        lhs: TieConstraint, rhs: [TieSize]
+    ) -> TieConstraint {
         lhs.constant = lhs.constant + rhs.reduce(0, {$0 + $1.spacing})
         return lhs
     }
@@ -48,8 +48,8 @@ public extension NSLayoutConstraint {
     /// - Parameter rhs: The value to substract to the constant.
     /// - Returns: The constraint.
     @discardableResult static func - <F: BinaryFloatingPoint>(
-        lhs: NSLayoutConstraint, rhs: F
-    ) -> NSLayoutConstraint {
+        lhs: TieConstraint, rhs: F
+    ) -> TieConstraint {
         lhs.constant = lhs.constant - CGFloat(rhs)
         return lhs
     }
@@ -59,8 +59,8 @@ public extension NSLayoutConstraint {
     /// - Parameter rhs: The `TieSize` spacing to substract to the constant.
     /// - Returns: The constraint.
     @discardableResult static func - (
-        lhs: NSLayoutConstraint, rhs: TieSize
-    ) -> NSLayoutConstraint {
+        lhs: TieConstraint, rhs: TieSize
+    ) -> TieConstraint {
         lhs.constant = lhs.constant - rhs.spacing
         return lhs
     }
@@ -70,8 +70,8 @@ public extension NSLayoutConstraint {
     /// - Parameter rhs: A `TieSize` array to sum and substract to the constant.
     /// - Returns: The constraint.
     @discardableResult static func - (
-        lhs: NSLayoutConstraint, rhs: [TieSize]
-    ) -> NSLayoutConstraint {
+        lhs: TieConstraint, rhs: [TieSize]
+    ) -> TieConstraint {
         lhs.constant = lhs.constant - rhs.reduce(0, {$0 + $1.spacing})
         return lhs
     }
