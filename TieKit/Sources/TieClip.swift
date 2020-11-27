@@ -39,21 +39,21 @@ public extension TieClip where AnchorType == NSLayoutXAxisAnchor {
     @discardableResult static func ~~> (
         lhs: TieClip<AnchorType>,
         rhs: TieClip<AnchorType>
-    ) -> NSLayoutConstraint {
+    ) -> TieConstraint {
         return lhs.anchor ~~> rhs.anchor
     }
     
     @discardableResult static func <~~ (
         lhs: TieClip<AnchorType>,
         rhs: TieClip<AnchorType>
-    ) -> NSLayoutConstraint {
+    ) -> TieConstraint {
         return lhs.anchor <~~ rhs.anchor
     }
     
     @discardableResult static func --- (
         lhs: TieClip<AnchorType>,
         rhs: TieClip<AnchorType>
-    ) -> NSLayoutConstraint {
+    ) -> TieConstraint {
         return lhs.anchor --- rhs.anchor
     }
     
@@ -66,21 +66,21 @@ public extension TieClip where AnchorType == NSLayoutYAxisAnchor {
     @discardableResult static func ~~> (
         lhs: TieClip<AnchorType>,
         rhs: TieClip<AnchorType>
-    ) -> NSLayoutConstraint {
+    ) -> TieConstraint {
         return lhs.anchor ~~> rhs.anchor
     }
     
     @discardableResult static func <~~ (
         lhs: TieClip<AnchorType>,
         rhs: TieClip<AnchorType>
-    ) -> NSLayoutConstraint {
+    ) -> TieConstraint {
         return lhs.anchor <~~ rhs.anchor
     }
     
     @discardableResult static func --- (
         lhs: TieClip<AnchorType>,
         rhs: TieClip<AnchorType>
-    ) -> NSLayoutConstraint {
+    ) -> TieConstraint {
         return lhs.anchor --- rhs.anchor
     }
     
@@ -93,42 +93,42 @@ public extension TieClip where AnchorType == NSLayoutDimension {
     @discardableResult static func ~~> (
         lhs: TieClip<AnchorType>,
         rhs: TieClip<AnchorType>
-    ) -> NSLayoutConstraint {
+    ) -> TieConstraint {
         return lhs.anchor ~~> rhs.anchor
     }
     
     @discardableResult static func <~~ (
         lhs: TieClip<AnchorType>,
         rhs: TieClip<AnchorType>
-    ) -> NSLayoutConstraint {
+    ) -> TieConstraint {
         return lhs.anchor <~~ rhs.anchor
     }
     
     @discardableResult static func --- (
         lhs: TieClip<AnchorType>,
         rhs: TieClip<AnchorType>
-    ) -> NSLayoutConstraint {
+    ) -> TieConstraint {
         return lhs.anchor --- rhs.anchor
     }
     
     @discardableResult static func --= <F: BinaryFloatingPoint>(
         lhs: TieClip<AnchorType>,
         rhs: F
-    ) -> NSLayoutConstraint {
+    ) -> TieConstraint {
         return (lhs.anchor as! NSLayoutDimension) --= rhs
     }
 
     @discardableResult static func ~>= <F: BinaryFloatingPoint>(
         lhs: TieClip<AnchorType>,
         rhs: F
-    ) -> NSLayoutConstraint {
+    ) -> TieConstraint {
         return (lhs.anchor as! NSLayoutDimension) ~>= rhs
     }
 
     @discardableResult static func <~= <F: BinaryFloatingPoint>(
         lhs: TieClip<AnchorType>,
         rhs: F
-    ) -> NSLayoutConstraint {
+    ) -> TieConstraint {
         return (lhs.anchor as! NSLayoutDimension) <~= rhs
     }
     

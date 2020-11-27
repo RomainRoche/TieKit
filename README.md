@@ -19,17 +19,17 @@ _ = view.top(margin: true)	// top anchor
 
 ```swift
 // tie anchors with equal relation
-let constraint = subview.top() -- superview.top()
+let constraint: TieConstraint = subview.top() --- superview.top()
 
 // tie anchors with constant spacing, and ignoring result
-subview.leading() -- superview.leading() + 20
+subview.leading() --- superview.leading() + 20
 ```
 
 #### Greater or equal
 
 ````swift
 // tie anchors with 'greater than or equal' relation
-let constraint = subview.top() ~~> superview.top()
+let constraint: TieConstraint = subview.top() ~~> superview.top()
 
 // tie anchors with constant spacing, and ignoring result
 subview.leading() ~~> superview.leading() + 20
@@ -39,7 +39,7 @@ subview.leading() ~~> superview.leading() + 20
 
 ````swift
 // tie anchors with 'less than or equal' relation
-let constraint = subview.top() <~~ superview.top()
+let constraint: TieConstraint = subview.top() <~~ superview.top()
 
 // tie anchors with constant spacing, and ignoring result
 subview.leading() <~~ superview.leading() + 20
@@ -49,10 +49,10 @@ subview.leading() <~~ superview.leading() + 20
 
 ```swift
 // dimension equal to constant
-let constraint = subview.height() --= 80
+let constraint: TieConstraint = subview.height() --= 80
 
 // dimension greater or equal to constant
-let constraint = subview.height() ~>= 80
+let constraint: TieConstraint = subview.height() ~>= 80
 
 // dimension less or equal to constant and ignoring result
 subview.height() <~= 80
@@ -77,7 +77,7 @@ let smallSpacing: CGFloat = TieSize.s.spacing
 You can use `TieSize` to add to a constraint directly.
 
 ```swift
-subview.leading() -- superview.leading() + .s
+subview.leading() --- superview.leading() + .s
 ```
 
 ### Use in storyboard
