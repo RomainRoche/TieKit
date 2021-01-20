@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "TieKit",
     platforms: [
-        .iOS(.v10)
+        .iOS(.v11)
     ],
     products: [
         .library(name: "TieKit", type: .dynamic, targets: ["TieKit"]),
